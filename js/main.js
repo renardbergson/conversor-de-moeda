@@ -8,46 +8,7 @@ const $convertBtn = document.querySelector('#convertBtn')
 const $loadingGif = document.querySelector('.loadingGif')
 const $gitHubIcon = document.querySelector('.gitHubIcon')
 
-$initialCurrency.onchange = () => {
-    $gitHubIcon.style.display = 'none'
-    request()
-}
-
-$finalCurrency.onchange = () => {
-    $gitHubIcon.style.display = 'none'
-    request()
-}
-
-$exchangeBtn.onclick = () => {
-    const tempValue = $initialCurrency.value
-    $initialCurrency.value = $finalCurrency.value
-    $finalCurrency.value = tempValue
-
-    if ($amount.value != '') {
-        $gitHubIcon.style.display = 'none'
-        
-        request()
-    } else {
-        $conversionOutput.style.color = 'red'
-        $conversionOutput.style.fontSize = '0.6em'
-        $conversionOutput.style.height = '3em'
-        $conversionOutput.innerHTML = 'Valor de conversão inválido'
-    }
-}
-
-$convertBtn.onclick = () => {
-    $gitHubIcon.style.display = 'none'
-
-    if ($amount.value != '') {
-        request()
-    } else {        
-        $conversionOutput.style.color = 'red'
-        $conversionOutput.style.fontSize = '0.6em'
-        $conversionOutput.style.height = '3em'
-        $conversionOutput.innerHTML = 'Valor de conversão inválido'
-    }
-}
-
+// =================================================================================================================================
 function request() {
     $loadingGif.style.display = 'block'
 
@@ -86,4 +47,51 @@ function error() {
     $convertBtn.onclick = () => {
         location.reload()
     }
+}
+// =================================================================================================================================
+
+$initialCurrency.onchange = () => {
+    if ($amount.value != '') {
+        $gitHubIcon.style.display = 'none'
+        request()
+    }
+}
+
+$finalCurrency.onchange = () => {
+    if ($amount.value != '') {
+        $gitHubIcon.style.display = 'none'
+        request()
+    }
+}
+
+$exchangeBtn.onclick = () => {
+    const tempValue = $initialCurrency.value
+    $initialCurrency.value = $finalCurrency.value
+    $finalCurrency.value = tempValue
+
+    if ($amount.value != '') {
+        $gitHubIcon.style.display = 'none'
+
+        request()
+    } else {
+        invalidConversionValue()
+    }
+}
+
+$convertBtn.onclick = () => {
+    $gitHubIcon.style.display = 'none'
+
+    if ($amount.value != '') {
+        request()
+    } else {        
+        invalidConversionValue()
+    }
+}
+// =================================================================================================================================
+
+function invalidConversionValue() {
+    $conversionOutput.style.color = 'red'
+    $conversionOutput.style.fontSize = '0.6em'
+    $conversionOutput.style.height = '3em'
+    $conversionOutput.innerHTML = 'Valor de conversão inválido'
 }
