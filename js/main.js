@@ -3,16 +3,11 @@ const $amount = document.querySelector('#numberInput')
 const $initialCurrency = document.querySelector('#initialCurrency')
 const $exchangeBtn = document.querySelector('#valueExchangeBtn')
 const $finalCurrency = document.querySelector('#finalCurrency')
+const $loadingGif = document.querySelector('.loadingGif')
 const $conversionOutput = document.querySelector('#conversionOutput')
-const $errorOutput = document.querySelector('#errorOutput')
 
-$exchangeBtn.onclick = () => {
-    const tempValue = $initialCurrency.value
-
-    $initialCurrency.value = $finalCurrency.value
-    $finalCurrency.value = tempValue
-
-    request()
+$amount.onkeypress = () => {
+    $conversionOutput.innerHTML = ''
 }
 
 $initialCurrency.onchange = () => {
@@ -23,12 +18,26 @@ $finalCurrency.onchange = () => {
     request()
 }
 
-$convertBtn.onclick = () => {
+$exchangeBtn.onclick = () => {
+    const tempValue = $initialCurrency.value
+
+    $initialCurrency.value = $finalCurrency.value
+    $finalCurrency.value = tempValue
+
     request()
+}
+$convertBtn.onclick = () => {
+    if ($amount.value != '') {
+        request()
+    } else {
+        $conversionOutput.style.color = 'red'
+        $conversionOutput.style.fontSize = '0.6em'
+        $conversionOutput.innerHTML = 'Valor de conversão inválido'
+    }
 }
 
 function request() {
-    // start loading animation
+    $loadingGif.style.display = 'block'
 
     fetch(`https://v6.exchangerate-api.com/v6/7394fe02a5811e6760b68b4b/pair/${$initialCurrency.value}/${$finalCurrency.value}/${$amount.value}`)
     .then(getResponse)
@@ -43,19 +52,24 @@ function getResponse(response) {
 }
 
 function conversionResult(data) {
-    // finish loading animation
+    $conversionOutput.style.color = 'green'
+    $conversionOutput.style.fontSize = '1em'
+
+    $loadingGif.style.display = 'none'
 
     const result = data.conversion_result
     $conversionOutput.innerHTML = result
-    console.log(result)
 }
 
 function error() {
-    $conversionOutput.style.display = 'none'
-    $errorOutput.style.display = 'block'
-    $convertBtn.innerHTML = 'Tentar novamente'
+    $loadingGif.style.display = 'none'
+    
+    $conversionOutput.style.color = 'red'
+    $conversionOutput.style.fontSize = '0.6em'
+    $conversionOutput.innerHTML = 'Desculpe, ocorreu um erro na requisição'
 
     $convertBtn.onclick = () => {
-        location.reload()
+        $conversionOutput.innerHTML = ''
+        request()
     }
 }

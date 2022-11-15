@@ -73,9 +73,10 @@
         }
     }
 
-    #errorOutput {
-        font-size: 0.7em;
-        color: darkred;
+    .loadingGif {
+        width: 2em;
+        display: block;
+        margin: 0 auto;
         display: none;
     }
 

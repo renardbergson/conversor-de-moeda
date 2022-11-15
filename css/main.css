@@ -53,9 +53,10 @@ body {
       font-size: 0.8em; }
     .container .configs .to select {
       transform: translateY(-8%); }
-  .container #errorOutput {
-    font-size: 0.7em;
-    color: darkred;
+  .container .loadingGif {
+    width: 2em;
+    display: block;
+    margin: 0 auto;
     display: none; }
   .container #convertBtn {
     width: 15em;
