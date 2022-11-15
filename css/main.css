@@ -57,7 +57,8 @@ body {
       padding: 0.2em;
       transform: translateY(-8%); }
     .container .configs i {
-      transform: translateY(8%); }
+      transform: translateY(8%);
+      margin: 0 0.3em; }
       .container .configs i:hover {
         cursor: pointer; }
     .container .configs .to span {
