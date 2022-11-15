@@ -4,20 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a76ec380a8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <title>Conversor de Moeda</title>
 </head>
 <body>
     <div class="container">
         <h1>Conversor de Moeda</h1>
-
-        <label class="label">
-            USD
+        
+        <div class="input">
+            <span>Valor a converter</span>
             <input id="numberInput" type="number">
-            =
-            <div class="numberOutput"></div>
-            BRL
-        </label>
+        </div>
+
+        <div class="configs">    
+            <div class="from">
+                <span>De</span>
+                <select name="initial currency" id="initialCurrency">
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+            
+            <i class="fa fa-duotone fa-money-bill-transfer"></i>
+            
+            <div class="to">
+                <span>Para</span>
+                <select name="final currency" id="finalCurrency">
+                    <option value="BRL">BRL</option>
+                </select>
+            </div>
+        </div>
+        
+        <p class="numberOutput"></p>
 
         <button id="convertBtn">Converter</button>
     </div>
