@@ -50,32 +50,10 @@ function error() {
 }
 // =================================================================================================================================
 
-$initialCurrency.onchange = () => {
-    if ($amount.value != '') {
-        $gitHubIcon.style.display = 'none'
-        request()
-    }
-}
-
-$finalCurrency.onchange = () => {
-    if ($amount.value != '') {
-        $gitHubIcon.style.display = 'none'
-        request()
-    }
-}
-
 $exchangeBtn.onclick = () => {
     const tempValue = $initialCurrency.value
     $initialCurrency.value = $finalCurrency.value
     $finalCurrency.value = tempValue
-
-    if ($amount.value != '') {
-        $gitHubIcon.style.display = 'none'
-
-        request()
-    } else {
-        invalidConversionValue()
-    }
 }
 
 $convertBtn.onclick = () => {
