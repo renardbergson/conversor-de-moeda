@@ -16,11 +16,22 @@
     flex-flow: column wrap;
     justify-content: space-evenly;
     background-color: rgb(250, 250, 250);
+    opacity: 0.9;
 
     h1 {
         font-size: 1.3em;
         display: inline-block;
         height: 3em;
+
+        &::after {
+            content: '';
+            background-image: url(https://www.citypng.com/public/uploads/preview/stack-of-yellow-gold-coins-hd-png-11639438716rhfxyincff.png);
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            background-size: cover;
+            transform: translateY(10%);
+        }
     }
 
     .input {
@@ -33,7 +44,7 @@
 
         #numberInput {
             padding: 0.2em;
-            width: 8em;
+            width: 90%;
             text-align: center;
             margin-top: 0.5em;
             border-radius: 10px;
