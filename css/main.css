@@ -24,13 +24,14 @@ body {
   .container h1 {
     font-size: 32px; }
   .container .input #numberInput {
-    padding: 0.5em;
-    width: 14em;
+    padding: 0.2em;
+    width: 11em;
     text-align: center;
     margin-top: 1em;
     border-radius: 10px;
     outline: none;
     font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
     -moz-appearance: textfield; }
   .container .input input::-webkit-outer-spin-button,
   .container .input input::-webkit-inner-spin-button {
@@ -46,11 +47,17 @@ body {
       transform: translateY(-8%); }
     .container .configs i {
       transform: translateY(8%); }
+      .container .configs i:hover {
+        cursor: pointer; }
     .container .configs .to span {
       font-size: 0.8em; }
     .container .configs .to select {
       transform: translateY(-8%); }
-  .container button {
+  .container #errorOutput {
+    font-size: 0.7em;
+    color: darkred;
+    display: none; }
+  .container #convertBtn {
     width: 15em;
     height: 3em;
     margin: 0 auto;

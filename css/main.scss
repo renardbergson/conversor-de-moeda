@@ -21,13 +21,14 @@
     .input {
 
         #numberInput {
-            padding: 0.5em;
-            width: 14em;
+            padding: 0.2em;
+            width: 11em;
             text-align: center;
             margin-top: 1em;
             border-radius: 10px;
             outline: none;
             font-family: 'Poppins', sans-serif;
+            font-size: 0.8em;
             -moz-appearance: textfield;
         }
         
@@ -55,6 +56,10 @@
 
         i {
             transform: translateY(8%);
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .to {
@@ -68,7 +73,13 @@
         }
     }
 
-    button {
+    #errorOutput {
+        font-size: 0.7em;
+        color: darkred;
+        display: none;
+    }
+
+    #convertBtn {
         width: 15em;
         height: 3em;
         margin: 0 auto;

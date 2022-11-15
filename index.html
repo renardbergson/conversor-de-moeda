@@ -22,20 +22,28 @@
                 <span>De</span>
                 <select name="initial currency" id="initialCurrency">
                     <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="BRL">BRL</option>
                 </select>
             </div>
             
-            <i class="fa fa-duotone fa-money-bill-transfer"></i>
+            <i class="fa fa-duotone fa-money-bill-transfer" id="valueExchangeBtn"></i>
             
             <div class="to">
                 <span>Para</span>
                 <select name="final currency" id="finalCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
                     <option value="BRL">BRL</option>
                 </select>
             </div>
         </div>
         
-        <p class="numberOutput"></p>
+        <p id="conversionOutput"></p>
+        <p id="errorOutput">
+            Desculpe, ocorreu um <br>
+            erro na requisição!
+        </p>
 
         <button id="convertBtn">Converter</button>
     </div>
