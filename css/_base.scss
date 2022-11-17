@@ -11,6 +11,7 @@ body {
     font-size: 25px;
     font-family: 'Poppins', sans-serif;
     background-color: rgb(87, 87, 240);
+    touch-action: none;
 
     @include devices (ultra) {
         font-size: 55px;

@@ -9,6 +9,7 @@ body {
   font-size: 25px;
   font-family: "Poppins", sans-serif;
   background-color: rgb(87, 87, 240);
+  touch-action: none;
 }
 @media (max-width: 2560px) {
   body {
