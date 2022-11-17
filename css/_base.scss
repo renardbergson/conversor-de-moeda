@@ -5,9 +5,35 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import 'breakpoints.scss';
 
 body {
     font-size: 25px;
     font-family: 'Poppins', sans-serif;
     background-color: rgb(87, 87, 240);
+
+    @include devices (ultra) {
+        font-size: 55px;
+    }
+    @include devices (laptopL) {
+        font-size: 25px;
+    }
+    @include devices (laptop) {
+        font-size: 23px;
+    }
+    @include devices (tablet) {
+        font-size: 21px;
+    }
+    @include devices (mobileL) {
+        font-size: 19px;
+    }
+    @include devices (mobileM) {
+        font-size: 17px;
+    }
+    @include devices (mobileS) {
+        font-size: 15px;
+    }
+    @include devices (galaxyZFold) {
+        font-size: 13px;
+    }
 }
