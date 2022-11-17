@@ -27,7 +27,7 @@ Meu objetivo ao desenvolver essa aplicação foi, mais uma vez, praticar a requi
 ### Preview
 Este é um pequeno preview da aplicação <br> 
 <br>
-![]()
+![](https://github.com/renardbergson/conversor-de-moeda/blob/main/img/gifPreview.gif)
 
 ### Link
   •	[Conversor de Moeda](https://conversor-de-moeda-rb.netlify.app/) 
