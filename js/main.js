@@ -1,7 +1,9 @@
 const $amount = document.querySelector('#numberInput')
+
 const $initialCurrency = document.querySelector('#initialCurrency')
 const $exchangeBtn = document.querySelector('#valueExchangeBtn')
 const $finalCurrency = document.querySelector('#finalCurrency')
+
 const $conversionOutput = document.querySelector('#conversionOutput')
 const $convertBtn = document.querySelector('#convertBtn')
 
@@ -12,7 +14,7 @@ const $gitHubIcon = document.querySelector('.gitHubIcon')
 function request() {
     $loadingGif.style.display = 'block'
 
-    fetch(`https://v6.exchangerate-api.com/v6/7394fe02a5811e6760b68b4b/pair/${$initialCurrency.value}/${$finalCurrency.value}/${$amount.value}`)
+    fetch(`https://v6.exchangerate-api.com/v6/7394fe02a5811e6760b68b4b/pair/${$initialCurrency.value}/${$finalCurrency.value}/${parseFloat($amount.value)}`)
         .then(getResponse)
         .then(conversionResult)
         .catch(error)
