@@ -30,7 +30,7 @@ Este é um pequeno preview da aplicação <br>
 ![](https://github.com/renardbergson/conversor-de-moeda/blob/main/img/gifPreview.gif)
 
 ### Link
-  •	[Conversor de Moeda](https://conversor-de-moeda-rb.netlify.app/) 
+  •	[Conversor de Moeda](https://conversor-de-moeda-rb.vercel.app) 
 
 ### Autor
   •	Renard Bergson 🤓 <br>
