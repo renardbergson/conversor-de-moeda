@@ -13,9 +13,9 @@ function request() {
     $loadingGif.style.display = 'block'
 
     fetch(`https://v6.exchangerate-api.com/v6/7394fe02a5811e6760b68b4b/pair/${$initialCurrency.value}/${$finalCurrency.value}/${$amount.value}`)
-    .then(getResponse)
-    .then(conversionResult)
-    .catch(error)
+        .then(getResponse)
+        .then(conversionResult)
+        .catch(error)
 }
 
 function getResponse(response) {
@@ -32,7 +32,14 @@ function conversionResult(data) {
     $loadingGif.style.display = 'none'
 
     const result = data.conversion_result
-    $conversionOutput.innerHTML = result
+
+    if (data.target_code === 'BRL') {
+        $conversionOutput.innerHTML = result.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})
+    } else if (data.target_code === 'USD') {
+        $conversionOutput.innerHTML = result.toLocaleString("pt-BR", {style:"currency", currency:"USD"})
+    } else if (data.target_code === 'EUR') {
+        $conversionOutput.innerHTML = result.toLocaleString("pt-BR", {style:"currency", currency:"EUR"})
+    }
 }
 
 function error() {
